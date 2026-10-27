@@ -38,8 +38,8 @@ p{margin:0 0 14px}
 .cols:after{content:"";position:absolute;left:50%;top:24px;bottom:24px;border-left:1px solid var(--rule)}
 .col{padding:52px 56px;text-align:center}.col p{color:#32373b;max-width:46ch;margin:0 auto 16px}
 /* work */
-.work{padding:96px 0;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.work h2{text-align:right;border-right:1px solid var(--rule);padding-right:56px}
+.work{padding:96px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.work h2{text-align:left}
 .work p{color:#32373b;max-width:58ch}.work em{font-family:"Cormorant Garamond",serif;font-size:1.15em;color:var(--teal)}
 /* meet */
 .meet{background:var(--chalk);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -47,9 +47,9 @@ p{margin:0 0 14px}
 .meet .portrait{width:180px;height:180px;margin:0 auto 34px}.meet p{color:#32373b;max-width:62ch;margin-left:auto;margin-right:auto}
 .meet p a{color:var(--teal)}
 /* emo */
-.emo{padding:104px 0;text-align:center;max-width:760px;margin:0 auto}
+.emo{padding:128px 24px;text-align:center;background:linear-gradient(rgba(34,38,42,.66),rgba(34,38,42,.76)),url(../assets/stock/misty-lake.jpg) center 45%/cover}.emo>*{max-width:760px;margin-left:auto;margin-right:auto}
 .emo .orn{font:500 28px/1 "Cormorant Garamond",serif;color:var(--teal);letter-spacing:.6em;margin-bottom:22px}
-.emo p{color:#32373b}
+.emo p{color:#f6f3ee}
 /* begin */
 .begin{padding:88px 0;text-align:center;border-top:1px solid var(--rule)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;list-style:none;padding:0;margin:44px 0 36px;counter-reset:s}
@@ -76,10 +76,10 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 26px;marg
  .hero .eyebrow{order:1}.hero h1{order:2}.hero .btn{order:3;margin-bottom:12px}.hero .factline{order:4;margin:0 0 18px}.hero .lede{order:5}.hero .sit{order:6}
  .cols{grid-template-columns:1fr}.cols:after{display:none}.col{padding:34px 4px}.col+.col{border-top:1px solid var(--rule)}
  .work{grid-template-columns:1fr;gap:10px;padding:56px 0}.work h2{text-align:center;border:0;padding:0}.work div{text-align:center}
- .meet .in{padding:56px 20px}.meet .portrait{width:130px;height:130px}.emo{padding:56px 0}
+ .meet .in{padding:56px 20px}.meet .portrait{width:130px;height:130px}.emo{padding:72px 20px}
  .begin{padding:56px 0}.steps{grid-template-columns:1fr;gap:30px}.answers{padding-bottom:56px}
  .final .in{padding:64px 20px}.btn{display:block}footer .in{padding:28px 20px}}
-.rimg,.wimg,.band-img,.vimg{filter:grayscale(.55) contrast(1.02) sepia(.12);display:block;object-fit:cover}.rimg{width:100%;aspect-ratio:3/2;margin:0 auto 26px;outline:1px solid var(--rule);outline-offset:8px}.wimg{width:70%;max-width:340px;aspect-ratio:4/5;margin:32px 0 0 auto;outline:1px solid var(--rule);outline-offset:8px}.band-img{width:100%;height:320px;margin:0 0 40px}.vimg{width:100%;max-width:680px;aspect-ratio:21/9;margin:30px auto 0}@media (max-width:860px){.wimg{width:100%;max-width:100%;aspect-ratio:16/10;margin:24px 0 0}.band-img{height:200px}}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.rimg,.wimg,.band-img,.vimg{filter:grayscale(.55) contrast(1.02) sepia(.12);display:block;object-fit:cover}.rimg{width:100%;aspect-ratio:3/2;margin:0 auto 26px;outline:1px solid var(--rule);outline-offset:8px}.wimg{width:70%;max-width:340px;aspect-ratio:4/5;margin:32px 0 0 auto;outline:1px solid var(--rule);outline-offset:8px}.band-img{width:100%;height:320px;margin:0 0 40px}.vimg{width:100%;max-width:680px;aspect-ratio:21/9;margin:30px auto 0}@media (max-width:860px){.wimg{width:100%;max-width:100%;aspect-ratio:16/10;margin:24px 0 0}.band-img{height:200px}}.work .wimg{width:100%;max-width:460px;margin:0 0 0 auto;aspect-ratio:4/5}.emo h2{color:var(--chalk)}.emo .more{color:#fff}.emo .orn{color:var(--teal-l)}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header><a class="mark" href="#" data-planned-page title="Page not designed yet">Liberation Coach</a>
@@ -102,12 +102,13 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 26px;marg
 </section>
 
 <section class="work">
- <div><h2>Turn a Broad Concern Into Something You Can <i>Work On</i></h2><img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy"></div>
- <div>
+ <div class="wtext">
+  <h2>Turn a Broad Concern Into Something You Can <i>Work On</i></h2>
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. <em>What happened? What are you assuming it means? What do you need to find out before deciding?</em></p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
   <a class="more" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
  </div>
+ <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
 </section>
 </div>
 
@@ -119,15 +120,14 @@ footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 26px;marg
  <a class="more" href="#" data-planned-page title="Page not designed yet">Read Victor's background</a>
 </div></section>
 
-<div class="wrap">
 <section class="emo">
- <img class="band-img" src="../assets/stock/misty-lake.jpg" alt="Calm lake with morning mist" loading="lazy">
  <div class="orn" aria-hidden="true">&middot; &middot; &middot;</div>
  <h2>Reflection and Emotional Awareness</h2>
  <p>Victor's emotional-awareness teaching includes noticing bodily sensations associated with a feeling. His reflective questions examine the situation and your interpretation of it. The Method page explains these parts of his work in plain language.</p>
  <a class="more" href="#" data-planned-page title="Page not designed yet">Understand Victor's approach</a>
 </section>
 
+<div class="wrap">
 <section class="begin">
  <h2>A Conversation Is the Next Step</h2>
  <img class="vimg" src="../assets/stock/video-call.jpg" alt="Man on a video call at his laptop" loading="lazy">

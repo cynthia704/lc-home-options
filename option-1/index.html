@@ -37,7 +37,7 @@ p{margin:0 0 14px}.muted{color:var(--muted)}
 .routes{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .route{padding:48px 48px 48px 0}.route+.route{padding:48px 0 48px 48px;border-left:1px solid var(--rule)}.route p{max-width:52ch;color:#2b2e33}
 /* work */
-.work{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;padding:96px 0}
+.work{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;padding:96px 0;align-items:center}
 .work p{max-width:62ch;color:#2b2e33}.work .q{font:italic 400 1.08em/1 "Fraunces",serif;color:var(--teal)}
 /* meet */
 .meet{background:var(--ink);color:var(--paper)}
@@ -49,8 +49,8 @@ p{margin:0 0 14px}.muted{color:var(--muted)}
 .talk span{display:block;font:italic 400 19px/1.3 "Fraunces",serif;color:var(--paper)}
 .meet .more{color:var(--teal-l)}
 /* emotional */
-.emo{background:var(--paper2)}.emo .in{max-width:760px;margin:0 auto;padding:96px 40px;text-align:center}
-.emo p{color:#2b2e33}.emo .rule{width:48px;height:2px;background:var(--teal);margin:0 auto 26px}
+.emo{background:linear-gradient(rgba(23,25,28,.66),rgba(23,25,28,.76)),url(../assets/stock/misty-lake.jpg) center 45%/cover}.emo .in{max-width:760px;margin:0 auto;padding:96px 40px;text-align:center}
+.emo p{color:#f6f2ea}.emo .rule{width:48px;height:2px;background:var(--teal);margin:0 auto 26px}
 /* begin */
 .begin{padding:96px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
 .steps{list-style:none;margin:0 0 26px;padding:0;counter-reset:s}
@@ -82,7 +82,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:#d9d4ca}
  .answers{grid-template-columns:1fr}.answers div,.answers div+div{padding:26px 0;border-left:0}.answers div+div{border-top:1px solid var(--rule)}
  .final{margin-top:56px}.final .in{padding:64px 20px}.btn{display:block;text-align:center}.btn.sm{display:inline-block}
  footer .in{padding:28px 20px}}
-.rimg{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:24px}.wimg{width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;display:block;margin-top:28px}.band-img{width:100%;height:380px;object-fit:cover;display:block}.vimg{width:100%;max-width:440px;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:24px}@media (max-width:860px){.wimg,.vimg{max-width:100%;aspect-ratio:16/10}.band-img{height:220px}}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.rimg{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:24px}.wimg{width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;display:block;margin-top:28px}.band-img{width:100%;height:380px;object-fit:cover;display:block}.vimg{width:100%;max-width:440px;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:24px}@media (max-width:860px){.wimg,.vimg{max-width:100%;aspect-ratio:16/10}.band-img{height:220px}}.work .wimg{max-width:none;width:100%;margin:0;aspect-ratio:4/5}.emo .in{padding:128px 40px}.emo h2{color:var(--paper)}.emo .more{color:#fff}.emo .rule{background:var(--teal-l)}@media (max-width:860px){.emo .in{padding:72px 20px}}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="hd"><a class="mark" href="#" data-planned-page title="Page not designed yet">Liberation <em>Coach</em></a>
@@ -107,12 +107,13 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:#d9d4ca}
 </section>
 
 <section class="work">
- <div><h2>Turn a Broad Concern Into Something You Can <em>Work On</em></h2><img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy"></div>
- <div>
+ <div class="wtext">
+  <h2>Turn a Broad Concern Into Something You Can <em>Work On</em></h2>
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. <span class="q">What happened?</span> <span class="q">What are you assuming it means?</span> <span class="q">What do you need to find out before deciding?</span></p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
   <a class="more" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
  </div>
+ <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
 </section>
 </div>
 
@@ -126,7 +127,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:#d9d4ca}
  </div>
 </div></section>
 
-<section class="emo"><img class="band-img" src="../assets/stock/misty-lake.jpg" alt="Calm lake with morning mist" loading="lazy"><div class="in">
+<section class="emo"><div class="in">
  <div class="rule" aria-hidden="true"></div>
  <h2>Reflection and Emotional Awareness</h2>
  <p>Victor's emotional-awareness teaching includes noticing bodily sensations associated with a feeling. His reflective questions examine the situation and your interpretation of it. The Method page explains these parts of his work in plain language.</p>

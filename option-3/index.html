@@ -42,7 +42,7 @@ p{margin:0 0 14px}
 /* cta band */
 .band{border-bottom:1px solid var(--line)}.band .in{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:30px 40px}.band p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
 /* work */
-.work .in{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:96px 40px}
+.work .in{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;padding:96px 40px;align-items:center}
 .work p{color:var(--body);max-width:60ch}.qs{list-style:none;padding:0;margin:22px 0 26px;border-left:3px solid var(--clay)}
 .qs li{padding:6px 0 6px 18px;font-weight:700;font-stretch:112%;font-size:19px;color:var(--cream)}
 /* meet */
@@ -56,7 +56,7 @@ p{margin:0 0 14px}
 .emo .bar{width:6px;height:100%;min-height:120px;background:linear-gradient(var(--teal),var(--clay))}
 .emo p{color:var(--body);max-width:64ch}
 /* begin */
-.begin .in{padding:96px 40px}
+.begin{background:linear-gradient(rgba(15,26,43,.86),rgba(15,26,43,.93)),url(../assets/stock/video-call.jpg) center/cover}.begin .in{padding:112px 40px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:28px 0 30px;counter-reset:s}
 .steps li{counter-increment:s;background:var(--navy2);padding:28px;border-top:3px solid var(--teal)}
 .steps li:nth-child(2){border-color:var(--clay)}.steps li:before{content:"0" counter(s);font-weight:800;font-stretch:125%;font-size:30px;color:#ffffff30;display:block}
@@ -88,7 +88,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
  .begin .in{padding:56px 18px}.steps{grid-template-columns:1fr}
  .answers .in{padding:0 18px 56px}.qa{grid-template-columns:1fr}.qa div,.qa div+div{padding:24px 0}
  .final .in{padding:64px 18px}.final .btn{display:block}footer .in{padding:28px 18px}}
-.wimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-top:28px;border-left:4px solid var(--clay)}.bhead{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end}.vimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-top:3px solid var(--teal)}@media (max-width:860px){.bhead{grid-template-columns:1fr;gap:16px}}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.wimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-top:28px;border-left:4px solid var(--clay)}.bhead{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end}.vimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-top:3px solid var(--teal)}@media (max-width:860px){.bhead{grid-template-columns:1fr;gap:16px}}.work .wimg{margin-top:0;aspect-ratio:4/5}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="hd"><a class="mark wide" href="#" data-planned-page title="Page not designed yet">Liberation <b>Coach</b></a>
@@ -109,13 +109,13 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
 <section class="band"><div class="in"><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a><p>Online sessions with Victor. Circle access for coaching members. Apply to take the next step: a discovery Zoom call with Victor, with no obligation to proceed with coaching.</p></div></section>
 
 <section class="work"><div class="in">
- <h2 class="wide">Turn a Broad Concern Into Something You Can Work On</h2>
  <div>
+  <h2 class="wide">Turn a Broad Concern Into Something You Can Work On</h2>
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. What happened? What are you assuming it means? What do you need to find out before deciding?</p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
   <a class="more" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
-  <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
  </div>
+ <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
 </div></section>
 
 <section class="meet"><div class="in">
@@ -138,7 +138,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
 </div></section>
 
 <section class="begin"><div class="in">
- <div class="bhead"><h2 class="wide">A Conversation Is the Next Step</h2><img class="vimg" src="../assets/stock/video-call.jpg" alt="Man on a video call at his laptop" loading="lazy"></div>
+ <h2 class="wide">A Conversation Is the Next Step</h2>
  <ol class="steps">
   <li><h3 class="wide">Apply</h3><p>Describe what you would like to work on.</p></li>
   <li><h3 class="wide">Meet Victor on Zoom</h3><p>The next step is a discovery call with Victor to explore fit. There is no obligation to proceed with coaching.</p></li>
