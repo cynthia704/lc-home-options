@@ -33,8 +33,8 @@ p{margin:0 0 14px}
 /* arena */
 .arena{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
 .side{position:relative;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.side.f{background:linear-gradient(200deg,var(--navy3),#13213a 55%,var(--navy))}
-.side.a{background:linear-gradient(160deg,#3b2420,#2a1d22 45%,var(--navy))}
+.side.f{background:linear-gradient(200deg,rgba(29,49,80,.82),rgba(15,26,43,.95) 70%),url(../assets/stock/founder-thinking.jpg) center/cover}
+.side.a{background:linear-gradient(160deg,rgba(59,36,32,.82),rgba(15,26,43,.95) 70%),url(../assets/stock/athlete-tennis-clay.jpg) center/cover}
 .side:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff06 0 1px,transparent 1px 80px)}
 .side.a:before{background:repeating-linear-gradient(0deg,#ffffff07 0 1px,transparent 1px 60px)}
 .side>*{position:relative}.side p{color:#d6dce5;max-width:50ch}.side.a .more{border-color:var(--clay)}
@@ -52,7 +52,7 @@ p{margin:0 0 14px}
 .meet p{color:#2b3647;max-width:60ch}.meet p a{color:var(--clay-d);font-weight:500}.meet .more{color:var(--navy);border-color:var(--clay)}
 .meet .eyebrow{color:var(--clay-d)}
 /* emo */
-.emo{background:var(--navy2)}.emo .in{padding:96px 40px;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.emo{background:linear-gradient(90deg,rgba(22,36,58,.97) 45%,rgba(22,36,58,.8)),url(../assets/stock/misty-lake.jpg) center/cover}.emo .in{padding:96px 40px;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
 .emo .bar{width:6px;height:100%;min-height:120px;background:linear-gradient(var(--teal),var(--clay))}
 .emo p{color:var(--body);max-width:64ch}
 /* begin */
@@ -88,14 +88,14 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
  .begin .in{padding:56px 18px}.steps{grid-template-columns:1fr}
  .answers .in{padding:0 18px 56px}.qa{grid-template-columns:1fr}.qa div,.qa div+div{padding:24px 0}
  .final .in{padding:64px 18px}.final .btn{display:block}footer .in{padding:28px 18px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.wimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-top:28px;border-left:4px solid var(--clay)}.bhead{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end}.vimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-top:3px solid var(--teal)}@media (max-width:860px){.bhead{grid-template-columns:1fr;gap:16px}}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="hd"><a class="mark wide" href="#" data-planned-page title="Page not designed yet">Liberation <b>Coach</b></a>
 <nav aria-label="Main"><a href="#" data-planned-page title="Page not designed yet">Coaching</a><a href="#" data-planned-page title="Page not designed yet">Method</a><a href="#" data-planned-page title="Page not designed yet">For Founders</a><a href="#" data-planned-page title="Page not designed yet">For Athletes</a><a href="#" data-planned-page title="Page not designed yet">About</a><a class="btn sm" href="#" data-planned-page title="Page not designed yet">Apply</a></nav></div></header>
 <main id="main">
 <section class="top in" aria-labelledby="h1">
- <div class="portrait"><img src="../assets/victor-portrait-400.jpg" alt="Victor Pierantoni, coach at Liberation Coach"><span class="ph">PLACEHOLDER</span></div>
+ <div class="portrait"><img src="../assets/victor-polo-crop-300x600.jpg" alt="Victor Pierantoni, coach at Liberation Coach" style="object-position:50% 10%"><span class="ph">PLACEHOLDER</span></div>
  <div><p class="eyebrow">Work with Victor Pierantoni</p><h1 id="h1" class="wide">1:1 Performance Coaching for Founders and Athletes</h1><a class="btn mob" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a>
  <p class="lede">Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
  <p class="lede" style="color:var(--muted)">Bring a decision you keep revisiting, a conversation you are putting off or a moment of pressure you want to handle differently.</p></div>
@@ -114,6 +114,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. What happened? What are you assuming it means? What do you need to find out before deciding?</p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
   <a class="more" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
+  <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
  </div>
 </div></section>
 
@@ -137,7 +138,7 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
 </div></section>
 
 <section class="begin"><div class="in">
- <h2 class="wide">A Conversation Is the Next Step</h2>
+ <div class="bhead"><h2 class="wide">A Conversation Is the Next Step</h2><img class="vimg" src="../assets/stock/video-call.jpg" alt="Man on a video call at his laptop" loading="lazy"></div>
  <ol class="steps">
   <li><h3 class="wide">Apply</h3><p>Describe what you would like to work on.</p></li>
   <li><h3 class="wide">Meet Victor on Zoom</h3><p>The next step is a discovery call with Victor to explore fit. There is no obligation to proceed with coaching.</p></li>
@@ -164,5 +165,5 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
 </main>
 <footer><div class="in"><span>&copy; 2026 Liberation Coach Inc.</span>
 <nav aria-label="Footer"><a href="#" data-planned-page title="Page not designed yet">FAQ</a><a href="#" data-planned-page title="Page not designed yet">Contact</a><a href="#" data-planned-page title="Page not designed yet">Privacy Policy</a><a href="#" data-planned-page title="Page not designed yet">Terms of Service</a><a href="#" data-planned-page title="Page not designed yet">Coaching Disclaimer</a><a href="#" data-planned-page title="Page not designed yet">Accessibility</a></nav></div></footer>
-<div class="note">Option 3: Two Arenas. Design draft for review, homepage only. Photo is a placeholder. Menu and button links are not active yet.</div>
+<div class="note">Option 3: Two Arenas. Design draft for review, homepage only. Victor photos are from the current site (placeholders); scene photos are free-license stock (Pexels). Menu and button links are not active yet.</div>
 </body></html>
