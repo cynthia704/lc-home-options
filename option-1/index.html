@@ -27,9 +27,10 @@ header.open .mobile-nav{display:block}
 /* buttons: one Apply style everywhere; quiet secondary buttons */
 .btn{display:inline-block;background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;font-weight:600;padding:15px 26px;font-size:16px;line-height:1.2;transition:background .2s}
 .btn:hover{background:#000}.btn.sm{padding:10px 18px;font-size:14px}
-.qbtn{display:inline-block;border:1px solid var(--teal);color:var(--teal);background:transparent;text-decoration:none;font-weight:600;font-size:14px;line-height:1.2;padding:9px 16px;transition:background .2s,color .2s}
-.qbtn:hover{background:var(--teal);color:#fff}
-.qbtn.on-dark{border-color:var(--teal-l);color:var(--teal-l)}.qbtn.on-dark:hover{background:var(--teal-l);color:var(--ink)}
+.qbtn{display:inline-flex;align-items:center;gap:10px;background:#dfebe8;border:1.5px solid var(--teal);color:#0b5550;text-decoration:none;font-weight:600;font-size:15px;line-height:1.2;padding:12px 20px;box-shadow:0 3px 0 rgba(15,107,100,.28);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.qbtn:after{content:"\2192";font-size:1.1em;transition:transform .2s}
+.qbtn:hover{background:var(--teal);color:#fff;transform:translateY(-1px)}.qbtn:hover:after{transform:translateX(3px)}
+.qbtn.on-dark{background:rgba(127,201,192,.16);border-color:var(--teal-l);color:#fff;box-shadow:0 3px 0 rgba(127,201,192,.3)}.qbtn.on-dark:hover{background:var(--teal-l);color:var(--ink)}
 .eyebrow{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 18px}
 h1{font:400 clamp(40px,5.2vw,68px)/1.08 "Fraunces",serif;margin:0 0 22px;letter-spacing:-.01em}h1 em,h2 em{font-style:italic;color:var(--teal)}
 h2{font:400 clamp(32px,3.6vw,48px)/1.12 "Fraunces",serif;margin:0 0 18px;letter-spacing:-.005em}
@@ -44,16 +45,20 @@ section{padding:var(--gap) 0}
 .sit{max-width:52ch;font:italic 400 21px/1.5 "Fraunces",serif;border-left:2px solid var(--teal);padding-left:18px;margin:0 0 28px}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;display:block}
 /* intro strip (moved hero paragraph) */
-.intro{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
-.intro p{margin:0;color:#2b2e33}.intro .fact{color:var(--ink);font-weight:500;border-left:2px solid var(--teal);padding-left:18px}
+.intro{display:grid;grid-template-columns:1.6fr 1fr;gap:64px;align-items:start}
+.intro p{margin:0}.intro .lead{font:400 23px/1.55 "Fraunces",serif;color:var(--ink)}
+.intro .lead:first-letter{float:left;font-size:4.1em;line-height:.82;padding:8px 12px 0 0;color:var(--teal)}
+.intro .fact{background:var(--paper2);border-top:3px solid var(--teal);padding:26px 28px;font-weight:500;color:var(--ink)}
 /* routes */
 .routes{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .route img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .route h3{margin-top:22px}.route p{color:#2b2e33;max-width:52ch}
 /* work: text left, photo right */
-.work{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.work .ph-wrap{margin-bottom:40px}
+.work img{width:100%;aspect-ratio:21/8;object-fit:cover;object-position:50% 48%;display:block}
+.work .cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+.work h2{border-top:3px solid var(--ink);padding-top:22px}
 .work p{max-width:62ch;color:#2b2e33}.work .q{font:italic 400 1.08em/1 "Fraunces",serif;color:var(--teal)}
-.work img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 /* meet: dark band */
 .meet{background:var(--ink);color:var(--paper)}
 .meet .in{display:grid;grid-template-columns:.7fr 1.3fr;gap:72px;max-width:1200px;margin:0 auto;padding:0 40px;align-items:center}
@@ -70,13 +75,14 @@ section{padding:var(--gap) 0}
 .steps li:before{content:counter(s);font:italic 400 34px/1 "Fraunces",serif;color:var(--teal)}
 .steps h3{font-size:22px;margin:0 0 6px}.steps p{margin:0;color:#2b2e33}
 /* answers: three columns */
-.answers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.answers div{padding:32px 32px 32px 0}.answers div+div{padding-left:32px;border-left:1px solid var(--rule)}
-.answers h3{font-size:22px}.answers p{color:#2b2e33;margin:0}
-.after{margin-top:22px}
+.answers{max-width:800px;margin:0 auto;border-bottom:1px solid var(--rule)}
+.answers div{display:grid;grid-template-columns:72px 1fr;padding:26px 0;border-top:1px solid var(--rule)}
+.answers div:before{content:"\201C";font:italic 400 72px/.8 "Fraunces",serif;color:var(--teal);grid-row:span 2}
+.answers h3{font-size:26px;font-style:italic;font-weight:400;margin:0 0 6px}.answers p{color:#2b2e33;margin:0}
+.after{margin-top:26px;text-align:center}
 /* final: light band so the dark Apply button stays the same */
-.final{background:var(--paper2);border-top:1px solid var(--rule);padding:var(--gap) 0}
-.final .in{max-width:860px;margin:0 auto;padding:0 40px;text-align:center}
+.final{background:var(--paper2);border-top:1px solid var(--rule);padding:32px 40px}
+.final .in{max-width:940px;margin:0 auto;padding:44px 64px;text-align:center;background:var(--paper);border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:-10px}
 .final h2{font-size:clamp(34px,4.4vw,56px)}.final p{color:#2b2e33;max-width:62ch;margin:0 auto 14px}.final p a:not(.btn){color:var(--teal);font-weight:600}
 .final .next{font-size:15px;color:var(--muted);margin-top:16px}
 footer{background:var(--ink2);color:#c9c3b8;font-size:14px}
@@ -91,14 +97,14 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:#e4dfd5}
  :root{--gap:44px}.wrap{padding:0 20px}
  .hero{grid-template-columns:1fr;gap:16px;padding-top:24px}.portrait{order:-1;max-width:110px;display:flex;flex-direction:column-reverse;align-items:flex-start}.portrait .phl{position:static;display:inline-block;margin-top:6px;white-space:nowrap;background:none;padding:0;color:#4a4f55}
  .hero h1{font-size:40px}.sit{font-size:19px;margin-bottom:22px}
- .intro{grid-template-columns:1fr;gap:16px}
+ .intro{grid-template-columns:1fr;gap:20px}.intro .lead{font-size:20px}
  .routes{grid-template-columns:1fr;gap:36px}
- .work{grid-template-columns:1fr;gap:24px}.work img{aspect-ratio:16/10}
+ .work .ph-wrap{margin-bottom:24px}.work img{aspect-ratio:16/10}.work .cols{grid-template-columns:1fr;gap:4px}
  .meet .in{grid-template-columns:1fr;gap:24px;padding:0 20px}.meet .ph-wrap{max-width:180px}
  .emo .in{padding:0 20px}
  .begin{grid-template-columns:1fr;gap:8px}.begin img{aspect-ratio:16/10}
- .answers{grid-template-columns:1fr}.answers div,.answers div+div{padding:24px 0;border-left:0}.answers div+div{border-top:1px solid var(--rule)}
- .final .in{padding:0 20px}.final .btn{display:block}
+ .answers div{grid-template-columns:44px 1fr;padding:22px 0}.answers div:before{font-size:52px}.answers h3{font-size:22px}
+ .final{padding-left:16px;padding-right:16px}.final .in{padding:40px 22px}.final .btn{display:block}
  footer .in{padding:28px 20px}
  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:9;background:rgba(244,239,230,.97);border-top:1px solid var(--rule);padding:10px 16px}
  .mbar .btn{display:block;text-align:center}body{padding-bottom:76px}
@@ -126,7 +132,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:#e4dfd5}
 </section>
 
 <section class="intro" aria-label="About the coaching">
- <p>Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
+ <p class="lead">Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
  <p class="fact">Online sessions with Victor. Circle access for coaching members. Apply to take the next step: a discovery Zoom call with Victor, with no obligation to proceed with coaching.</p>
 </section>
 
@@ -136,13 +142,15 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:#e4dfd5}
 </section>
 
 <section class="work">
- <div>
+ <figure class="ph-wrap"><span class="phl">Placeholder stock photo</span><img src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy"></figure>
+ <div class="cols">
   <h2>Turn a Broad Concern Into Something You Can <em>Work On</em></h2>
+  <div>
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. <span class="q">What happened?</span> <span class="q">What are you assuming it means?</span> <span class="q">What do you need to find out before deciding?</span></p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
   <a class="qbtn" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
+  </div>
  </div>
- <figure class="ph-wrap"><span class="phl">Placeholder stock photo</span><img src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy"></figure>
 </section>
 </div>
 
