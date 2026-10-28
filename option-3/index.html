@@ -114,8 +114,19 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:9;background:rgba(15,26,43,.97);border-top:1px solid var(--line);padding:10px 16px}
  .mbar .btn{display:block;text-align:center}body{padding-bottom:76px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style></head><body>
+/* motion: scroll reveals (only when JS runs; off for reduced motion) */
+body{overflow-x:clip}
+header{transition:box-shadow .3s}header.scrolled{box-shadow:0 8px 24px rgba(0,0,0,.10)}
+.js .rv{opacity:0;transform:translateY(var(--ty,26px));transition:opacity var(--dur,.8s) var(--ease,cubic-bezier(.2,.7,.2,1)),transform var(--dur,.8s) var(--ease,cubic-bezier(.2,.7,.2,1)),clip-path var(--dur,.8s) var(--ease,cubic-bezier(.2,.7,.2,1));transition-delay:var(--d,0s)}
+.js .rv-l{transform:translateX(-40px)}.js .rv-r{transform:translateX(40px)}
+.js .rv-zoom{transform:scale(.9)}.js .rv-line{transform:scaleX(0);transform-origin:left center}
+.js .rv-wipe{transform:none}.js .rv-wipe>img{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.65,0,.25,1) var(--d,0s)}.js .rv-wipe.on>img{clip-path:inset(0 0 0 0)}
+.js .rv.on{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+@media (max-width:860px){.js .rv-l,.js .rv-r{transform:translateY(22px)}}
+.steps li:hover,.qa div:hover{background:var(--navy3)}
+.js .rv-zoom{transform:scale(.94) translateY(16px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1!important;transform:none!important;clip-path:none!important}.js .rv-wipe>img{clip-path:none!important}.js .timeline:before{transform:none!important}.js .route img,.js .row img{transform:none!important}}
+</style><script>document.documentElement.className+=" js"</script></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header id="top">
  <div class="hd"><a class="mark wide caps" href="#" data-planned-page title="Page not designed yet">Liberation <b>Coach</b></a>
@@ -209,5 +220,13 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
 b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
 h.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');b.setAttribute('aria-expanded','false')})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){h.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus()}})})();
+(function(){var cfg=[[".top .ph-wrap", "rv-l", 0, 0], [".top > div > *", "rv-r", 0.08, 0.1], [".intro p", "", 0, 0], [".facts li", "", 0.1, 0.12], [".side.f > :not(.phl)", "rv-l", 0, 0.08], [".side.a > :not(.phl)", "rv-r", 0.1, 0.08], [".work .in > div > *", "rv-l", 0, 0.08], [".work .ph-wrap", "rv-r", 0.1, 0], [".meet .in > div > *", "rv-l", 0, 0.08], [".meet .ph-wrap", "rv-r", 0.1, 0], [".emo .bar", "rv-line", 0, 0], [".emo .txt > :not(.bar)", "rv-l", 0.1, 0.08], [".emo .ph-wrap", "rv-wipe", 0, 0], [".begin h2", "rv-l", 0, 0], [".steps li", "rv-zoom", 0.1, 0.12], [".begin .in > .qbtn", "", 0.4, 0], [".qa > div", "rv-zoom", 0, 0.12], [".answers .in > .qbtn", "", 0.3, 0], [".final h2", "rv-l", 0, 0], [".final .in > div", "rv-r", 0.12, 0]];var all=[];
+cfg.forEach(function(c){var els=document.querySelectorAll(c[0]);for(var i=0;i<els.length;i++){var e=els[i];e.className+=' rv '+c[1];e.style.setProperty('--d',((c[2]||0)+i*(c[3]||0)).toFixed(2)+'s');all.push(e)}});
+var tl=document.querySelectorAll('.rv-tl');for(var j=0;j<tl.length;j++)all.push(tl[j]);
+document.documentElement.style.setProperty('--dur','.6s');
+if(!('IntersectionObserver' in window)){all.forEach(function(e){e.classList.add('on')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+all.forEach(function(e){io.observe(e)});setTimeout(function(){if(!document.querySelector('.rv.on'))all.forEach(function(e){e.classList.add('on')})},1500);
+var h=document.getElementById('top');function sc(){h.classList.toggle('scrolled',window.scrollY>8)}window.addEventListener('scroll',sc,{passive:true});sc()})();
 </script>
 </body></html>
