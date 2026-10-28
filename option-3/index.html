@@ -1,150 +1,175 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>1:1 Performance Coaching | Liberation Coach</title>
 <meta name="description" content="Work with Victor Pierantoni on the decisions, pressure and reactions you want to handle differently. Explore 1:1 coaching for founders and adult athletes.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,700;125,700;125,800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0f1a2b;--navy2:#16243a;--navy3:#1d3150;--clay:#b0532c;--clay-d:#93421f;--teal:#2aa69a;--cream:#f3eee7;--muted:#9aa6b6;--line:#26354d;--body:#d0d7e1}
+:root{--navy:#0f1a2b;--navy2:#16243a;--navy3:#1d3150;--clay:#b0532c;--clay-d:#93421f;--teal:#2aa69a;--cream:#f3eee7;--muted:#9aa6b6;--line:#26354d;--body:#d0d7e1;--gap:48px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--navy);color:var(--cream);font:400 17px/1.65 "Archivo",system-ui,sans-serif;font-stretch:100%}
-a{color:inherit}a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
-.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 12px;z-index:9}
-.wide{font-weight:800;font-stretch:125%;text-transform:uppercase}
-header{position:sticky;top:0;z-index:5;background:#0f1a2bee;backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.hd{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;max-width:1320px;margin:0 auto}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 12px;z-index:20}
+/* headings: wide Title Case (uppercase only for eyebrows and the wordmark) */
+.wide{font-weight:800;font-stretch:125%}
+.caps{text-transform:uppercase}
+.nw{white-space:nowrap}
+header{position:sticky;top:0;z-index:10;background:rgba(15,26,43,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;max-width:1320px;margin:0 auto;gap:16px}
 .mark{font-size:19px;letter-spacing:.02em;text-decoration:none}.mark b{color:var(--teal)}
-nav{display:flex;gap:24px;align-items:center;font-size:14px}nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--cream)}
-.btn{display:inline-block;background:var(--clay);color:#fff;font-weight:700;text-decoration:none;padding:16px 28px;font-size:16px;transition:background .2s}
-.btn:hover{background:var(--clay-d)}.btn.sm{padding:10px 18px;font-size:14px;color:#fff}
+.nav{display:flex;gap:24px;align-items:center;font-size:14px}.nav a:not(.btn){color:var(--muted);text-decoration:none}.nav a:not(.btn):hover{color:var(--cream)}
+.menu-btn{display:none;background:none;border:1px solid var(--cream);color:var(--cream);font:700 14px/1 "Archivo",sans-serif;padding:10px 14px;cursor:pointer}
+.menu-btn span{display:inline-block;width:16px;height:2px;background:currentColor;position:relative;vertical-align:middle;margin-right:8px}
+.menu-btn span:before,.menu-btn span:after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}.menu-btn span:before{top:-5px}.menu-btn span:after{top:5px}
+.mobile-nav{display:none;border-top:1px solid var(--line);padding:6px 18px 18px}
+.mobile-nav a:not(.btn){display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:500}
+.mobile-nav .btn{display:block;text-align:center;margin-top:14px}
+header.open .mobile-nav{display:block}
+/* one Apply treatment: clay, white text */
+.btn{display:inline-block;background:var(--clay);color:#fff;border:1px solid var(--clay);font-weight:700;text-decoration:none;padding:16px 28px;font-size:16px;line-height:1.2;transition:background .2s}
+.btn:hover{background:var(--clay-d)}.btn.sm{padding:10px 18px;font-size:14px}
+.qbtn{display:inline-block;border:1px solid var(--teal);color:var(--cream);text-decoration:none;font-weight:700;font-size:14px;line-height:1.2;padding:9px 16px;transition:background .2s,color .2s}
+.qbtn:hover{background:var(--teal);color:var(--navy)}
+.qbtn.on-light{border-color:var(--navy);color:var(--navy)}.qbtn.on-light:hover{background:var(--navy);color:#fff}
 .in{max-width:1240px;margin:0 auto;padding:0 40px}
 .eyebrow{color:var(--teal);font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin:0 0 12px}
-h1{font-size:clamp(36px,4.6vw,64px);line-height:1.06;margin:0 0 18px;letter-spacing:-.005em}
-h2{font-size:clamp(30px,3.4vw,46px);line-height:1.08;margin:0 0 18px}
-h3{font-size:24px;line-height:1.15;margin:0 0 12px}
+h1{font-size:clamp(36px,4.6vw,62px);line-height:1.08;margin:0 0 18px;letter-spacing:-.01em}
+h2{font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin:0 0 18px}
+h3{font-size:24px;line-height:1.2;margin:0 0 12px}
 p{margin:0 0 14px}
-.more{color:var(--cream);font-weight:700;text-decoration:none;border-bottom:2px solid var(--teal)}.more:hover{color:var(--teal)}
-.ph{z-index:2;position:absolute;bottom:6px;left:6px;background:#000a;color:#fff;font-size:10px;padding:2px 6px;letter-spacing:.06em}
-/* top */
-.top{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:56px 40px 40px}
-.portrait{position:relative;width:180px}.portrait img{width:180px;height:225px;object-fit:cover;display:block;border:2px solid var(--line)}
-.lede{color:var(--body);max-width:70ch}.mob{margin:4px 0 22px}
-/* arena */
-.arena{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
-.side{position:relative;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.ph-wrap{position:relative;margin:0}.phl{position:absolute;z-index:3;top:10px;left:10px;background:rgba(0,0,0,.72);color:#fff;font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 7px}
+.bg-sec{position:relative}
+section{padding:var(--gap) 0}
+/* hero: small portrait + full-width headline */
+.top{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:40px}
+.top .ph-wrap{width:180px}.top img{width:180px;height:225px;object-fit:cover;object-position:50% 10%;display:block;border:2px solid var(--line)}
+.sit{color:var(--body);max-width:56ch;font-size:19px;margin:0 0 24px}
+/* intro strip */
+.intro{background:var(--navy2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.intro .in{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.intro p{margin:0;color:var(--body)}.intro .fact{color:var(--cream);border-left:3px solid var(--clay);padding-left:18px}
+/* arena: full-bleed split panels */
+.arena{display:grid;grid-template-columns:1fr 1fr;padding:0}
+.side{position:relative;padding:56px 48px 48px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
 .side.f{background:linear-gradient(200deg,rgba(29,49,80,.82),rgba(15,26,43,.95) 70%),url(../assets/stock/founder-thinking.jpg) center/cover}
 .side.a{background:linear-gradient(160deg,rgba(59,36,32,.82),rgba(15,26,43,.95) 70%),url(../assets/stock/athlete-tennis-clay.jpg) center/cover}
-.side:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff06 0 1px,transparent 1px 80px)}
-.side.a:before{background:repeating-linear-gradient(0deg,#ffffff07 0 1px,transparent 1px 60px)}
-.side>*{position:relative}.side p{color:#d6dce5;max-width:50ch}.side.a .more{border-color:var(--clay)}
-.side h3{font-size:30px}
-/* cta band */
-.band{border-bottom:1px solid var(--line)}.band .in{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:30px 40px}.band p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
+.side>*:not(.phl){position:relative}.side p{color:#d6dce5;max-width:50ch}.side h3{font-size:28px}.side .qbtn{align-self:flex-start}
+.side.a .qbtn{border-color:#e08a62}
 /* work */
-.work .in{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;padding:96px 40px;align-items:center}
-.work p{color:var(--body);max-width:60ch}.qs{list-style:none;padding:0;margin:22px 0 26px;border-left:3px solid var(--clay)}
-.qs li{padding:6px 0 6px 18px;font-weight:700;font-stretch:112%;font-size:19px;color:var(--cream)}
-/* meet */
+.work .in{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.work p{color:var(--body);max-width:60ch}
+.work img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-left:4px solid var(--clay)}
+/* meet: cream band */
 .meet{background:var(--cream);color:var(--navy)}
-.meet .in{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;padding:96px 40px;align-items:center}
-.meet .portrait,.meet .portrait img{width:100%}.meet .portrait img{height:auto;aspect-ratio:4/5;border:0}
-.meet p{color:#2b3647;max-width:60ch}.meet p a{color:var(--clay-d);font-weight:500}.meet .more{color:var(--navy);border-color:var(--clay)}
-.meet .eyebrow{color:var(--clay-d)}
-/* emo */
-.emo{background:linear-gradient(90deg,rgba(22,36,58,.97) 45%,rgba(22,36,58,.8)),url(../assets/stock/misty-lake.jpg) center/cover}.emo .in{padding:96px 40px;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.meet .in{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.meet img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.meet p{color:#2b3647;max-width:60ch}.meet p a{color:var(--clay-d);font-weight:500}
+/* emotional: bar + photo background */
+.emo{background:linear-gradient(90deg,rgba(22,36,58,.97) 45%,rgba(22,36,58,.8)),url(../assets/stock/misty-lake.jpg) center/cover}
+.emo .in{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
 .emo .bar{width:6px;height:100%;min-height:120px;background:linear-gradient(var(--teal),var(--clay))}
 .emo p{color:var(--body);max-width:64ch}
-/* begin */
-.begin{background:linear-gradient(rgba(15,26,43,.86),rgba(15,26,43,.93)),url(../assets/stock/video-call.jpg) center/cover}.begin .in{padding:112px 40px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:28px 0 30px;counter-reset:s}
+/* begin: cards on photo background */
+.begin{background:linear-gradient(rgba(15,26,43,.86),rgba(15,26,43,.93)),url(../assets/stock/video-call.jpg) center/cover;padding:var(--gap) 0 calc(var(--gap) - 20px)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:24px 0 26px;counter-reset:s}
 .steps li{counter-increment:s;background:var(--navy2);padding:28px;border-top:3px solid var(--teal)}
 .steps li:nth-child(2){border-color:var(--clay)}.steps li:before{content:"0" counter(s);font-weight:800;font-stretch:125%;font-size:30px;color:#ffffff30;display:block}
 .steps h3{font-size:22px}.steps p{margin:0;color:var(--body)}
-/* answers */
-.answers .in{padding:0 40px 96px}
-.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-bottom:26px}
-.qa div{background:var(--navy);padding:30px 28px 30px 0}.qa div+div{padding-left:28px}
+/* answers: three teal cards */
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-bottom:24px}
+.qa div{background:var(--navy);padding:28px 26px 28px 0}.qa div+div{padding-left:26px}
 .qa h3{font-size:20px;color:var(--teal)}.qa p{margin:0;color:var(--body)}
-/* final */
-.final{background:linear-gradient(135deg,var(--clay),#7f361c);color:#fff}
-.final .in{max-width:940px;padding:96px 40px;text-align:center}
-.final h2{font-size:clamp(32px,4vw,54px)}.final p{color:#fff;max-width:62ch;margin:0 auto 14px}.final p a:not(.btn){color:#fff;font-weight:700}
-.final .btn{background:var(--navy);color:#fff}.final .btn:hover{background:#000}
-.final .next{font-size:15px;margin-top:18px}
-footer{background:#0b1320;color:var(--muted);font-size:14px}
-footer .in{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center;padding:34px 40px}
-footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
-.note{background:#0b1320;border-top:1px solid var(--line);padding:14px;text-align:center;font-size:13px;color:var(--muted)}
+/* final: light cream band so the clay Apply stays the same */
+.final{background:var(--cream);color:var(--navy);padding:var(--gap) 0;border-top:6px solid var(--clay)}
+.final .in{max-width:940px;text-align:center}
+.final h2{font-size:clamp(30px,3.8vw,50px)}.final p{color:#2b3647;max-width:62ch;margin:0 auto 14px}.final p a:not(.btn){color:var(--clay-d);font-weight:700}
+.final .next{font-size:15px;margin-top:16px}
+footer{background:#0b1320;color:#a9b4c2;font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center;padding:32px 40px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
+.note{background:#0b1320;border-top:1px solid var(--line);padding:14px;text-align:center;font-size:13px;color:#a9b4c2}
+.mbar{display:none}
+@media (max-width:900px){.nav{display:none}.menu-btn{display:inline-block;white-space:nowrap;flex:none}.mark{white-space:nowrap;font-size:16px}.hd{padding:12px 18px}}
 @media (max-width:860px){
- .hd{padding:12px 18px}header nav a:not(.btn){display:none}.in{padding:0 18px}
- .top{grid-template-columns:1fr;padding:16px 18px 32px;gap:12px}.top .portrait,.top .portrait img{width:84px}.top .portrait img{height:104px}.top .ph{display:none}
- h1{font-size:30px}.mob{display:block;text-align:center;margin:0 0 18px}
- .arena{grid-template-columns:1fr}.side{padding:36px 20px;min-height:auto}
- .band .in{padding:24px 18px}.band .btn{display:block;width:100%;text-align:center}
- .work .in{grid-template-columns:1fr;gap:8px;padding:56px 18px}
- .meet .in{grid-template-columns:1fr;gap:24px;padding:56px 18px}.meet .portrait{max-width:200px}
- .emo .in{grid-template-columns:1fr;gap:16px;padding:56px 18px}.emo .bar{width:48px;height:4px;min-height:0}
- .begin .in{padding:56px 18px}.steps{grid-template-columns:1fr}
- .answers .in{padding:0 18px 56px}.qa{grid-template-columns:1fr}.qa div,.qa div+div{padding:24px 0}
- .final .in{padding:64px 18px}.final .btn{display:block}footer .in{padding:28px 18px}}
-.wimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-top:28px;border-left:4px solid var(--clay)}.bhead{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end}.vimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-top:3px solid var(--teal)}@media (max-width:860px){.bhead{grid-template-columns:1fr;gap:16px}}.work .wimg{margin-top:0;aspect-ratio:4/5}@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+ :root{--gap:44px}.in{padding:0 18px}
+ .top{grid-template-columns:1fr;gap:12px;padding-top:18px;padding-bottom:44px}.top .ph-wrap,.top img{width:84px}.top img{height:104px}.top .ph-wrap{display:flex;flex-direction:column-reverse;align-items:flex-start}.top .phl{position:static;display:inline-block;margin-top:6px;white-space:nowrap}
+ h1{font-size:30px}.sit{font-size:17px;margin-bottom:20px}
+ .intro .in{grid-template-columns:1fr;gap:16px}
+ .arena{grid-template-columns:1fr}.side{padding:44px 20px 36px;min-height:auto}
+ .work .in{grid-template-columns:1fr;gap:24px}.work img{aspect-ratio:16/10}
+ .meet .in{grid-template-columns:1fr;gap:24px}.meet .ph-wrap{max-width:200px}
+ .emo .in{grid-template-columns:1fr;gap:16px}.emo .bar{width:48px;height:4px;min-height:0}
+ .steps{grid-template-columns:1fr}
+ .qa{grid-template-columns:1fr}.qa div,.qa div+div{padding:22px 0}
+ .final .btn{display:block}footer .in{padding:28px 18px}
+ .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:9;background:rgba(15,26,43,.97);border-top:1px solid var(--line);padding:10px 16px}
+ .mbar .btn{display:block;text-align:center}body{padding-bottom:76px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
-<header><div class="hd"><a class="mark wide" href="#" data-planned-page title="Page not designed yet">Liberation <b>Coach</b></a>
-<nav aria-label="Main"><a href="#" data-planned-page title="Page not designed yet">Coaching</a><a href="#" data-planned-page title="Page not designed yet">Method</a><a href="#" data-planned-page title="Page not designed yet">For Founders</a><a href="#" data-planned-page title="Page not designed yet">For Athletes</a><a href="#" data-planned-page title="Page not designed yet">About</a><a class="btn sm" href="#" data-planned-page title="Page not designed yet">Apply</a></nav></div></header>
+<header id="top">
+ <div class="hd"><a class="mark wide caps" href="#" data-planned-page title="Page not designed yet">Liberation <b>Coach</b></a>
+  <nav class="nav" aria-label="Main"><a href="#" data-planned-page title="Page not designed yet">Coaching</a><a href="#" data-planned-page title="Page not designed yet">Method</a><a href="#" data-planned-page title="Page not designed yet">For Founders</a><a href="#" data-planned-page title="Page not designed yet">For Athletes</a><a href="#" data-planned-page title="Page not designed yet">About</a><a class="btn sm" href="#" data-planned-page title="Page not designed yet">Apply</a></nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span aria-hidden="true"></span>Menu</button>
+ </div>
+ <nav class="mobile-nav" id="mnav" aria-label="Mobile"><a href="#" data-planned-page title="Page not designed yet">Coaching</a><a href="#" data-planned-page title="Page not designed yet">Method</a><a href="#" data-planned-page title="Page not designed yet">For Founders</a><a href="#" data-planned-page title="Page not designed yet">For Athletes</a><a href="#" data-planned-page title="Page not designed yet">About</a><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a></nav>
+</header>
 <main id="main">
 <section class="top in" aria-labelledby="h1">
- <div class="portrait"><img src="../assets/victor-polo-crop-300x600.jpg" alt="Victor Pierantoni, coach at Liberation Coach" style="object-position:50% 10%"><span class="ph">PLACEHOLDER</span></div>
- <div><p class="eyebrow">Work with Victor Pierantoni</p><h1 id="h1" class="wide">1:1 Performance Coaching for Founders and Athletes</h1><a class="btn mob" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a>
- <p class="lede">Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
- <p class="lede" style="color:var(--muted)">Bring a decision you keep revisiting, a conversation you are putting off or a moment of pressure you want to handle differently.</p></div>
+ <figure class="ph-wrap"><span class="phl">Placeholder: Victor</span><img src="../assets/victor-polo-crop-300x600.jpg" alt="Victor Pierantoni, coach at Liberation Coach"></figure>
+ <div><p class="eyebrow">Work with Victor Pierantoni</p><h1 id="h1" class="wide"><span class="nw">1:1 Performance</span> Coaching for Founders and Athletes</h1>
+ <p class="sit">Bring a decision you keep revisiting, a conversation you are putting off or a moment of pressure you want to handle differently.</p>
+ <a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a></div>
 </section>
+
+<section class="intro" aria-label="About the coaching"><div class="in">
+ <p>Performance coaching at Liberation Coach is individual work with Victor Pierantoni on how you respond to a challenge and what you choose to do next. Founders, business owners and athletes aged 18 and older can bring a specific situation, examine the assumptions around it and consider a practical next step.</p>
+ <p class="fact">Online sessions with Victor. Circle access for coaching members. Apply to take the next step: a discovery Zoom call with Victor, with no obligation to proceed with coaching.</p>
+</div></section>
 
 <section class="arena" aria-label="Who the coaching is for">
- <div class="side f"><h3 class="wide">For Founders and Business Owners</h3><p>Leading a business can put you between a decision and the people who need an answer. You might be postponing feedback to a colleague or deciding which responsibilities to hand over. Start with a situation in your business and the response you want to change.</p><a class="more" href="#" data-planned-page title="Page not designed yet">Explore founder coaching</a></div>
- <div class="side a"><h3 class="wide">For Adult Athletes</h3><p>You may trust a skill in practice and begin to doubt it in competition. Pressure can pull your concentration toward the last mistake or what might happen next. Start with a moment when your focus or confidence changed and what you noticed.</p><a class="more" href="#" data-planned-page title="Page not designed yet">Explore coaching for athletes</a></div>
+ <div class="side f"><span class="phl">Placeholder stock photo</span><h3 class="wide">For Founders and Business Owners</h3><p>Leading a business can put you between a decision and the people who need an answer. You might be postponing feedback to a colleague or deciding which responsibilities to hand over. Start with a situation in your business and the response you want to change.</p><a class="qbtn" href="#" data-planned-page title="Page not designed yet">Explore founder coaching</a></div>
+ <div class="side a"><span class="phl">Placeholder stock photo</span><h3 class="wide">For Adult Athletes</h3><p>You may trust a skill in practice and begin to doubt it in competition. Pressure can pull your concentration toward the last mistake or what might happen next. Start with a moment when your focus or confidence changed and what you noticed.</p><a class="qbtn" href="#" data-planned-page title="Page not designed yet">Explore coaching for athletes</a></div>
 </section>
-
-<section class="band"><div class="in"><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a><p>Online sessions with Victor. Circle access for coaching members. Apply to take the next step: a discovery Zoom call with Victor, with no obligation to proceed with coaching.</p></div></section>
 
 <section class="work"><div class="in">
  <div>
   <h2 class="wide">Turn a Broad Concern Into Something You Can Work On</h2>
   <p>You might call it a mental block: you keep second-guessing a decision or putting off a conversation. Start with that specific situation. What happened? What are you assuming it means? What do you need to find out before deciding?</p>
   <p>In performance coaching, you and Victor work together on those questions. Personal growth can mean a change you choose in your own life, such as asking a question you have avoided, checking an assumption or taking an action you chose. You can then review what you did and what you learned.</p>
-  <a class="more" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
+  <a class="qbtn" href="#" data-planned-page title="Page not designed yet">See what a session can involve</a>
  </div>
- <img class="wimg" src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy">
+ <figure class="ph-wrap"><span class="phl">Placeholder stock photo</span><img src="../assets/stock/writing-notes.jpg" alt="Man writing notes while working through a question" loading="lazy"></figure>
 </div></section>
 
 <section class="meet"><div class="in">
- <div class="portrait"><img src="../assets/victor-portrait-400.jpg" alt="Portrait of Victor Pierantoni"><span class="ph">PLACEHOLDER PHOTO</span></div>
+ <figure class="ph-wrap"><span class="phl">Placeholder: Victor</span><img src="../assets/victor-portrait-400.jpg" alt="Portrait of Victor Pierantoni"></figure>
  <div>
   <h2 class="wide">A Coach With a Background in Martial Arts and Philosophy</h2>
   <p>Victor Pierantoni is the coach behind Liberation Coach. His background includes martial arts and the Zen and Stoic ideas he has discussed through Zen Stoic. His teaching considers attention, emotional experience and the choices people make in everyday life.</p>
   <p>Hear Victor discuss these ideas in <a href="http://supermamas.com/episodeblog/ep235-learning-to-stay-sane-and-zen-stoic-while-in-quarantine-with-life-coach-victor-pierantoni-of-zen-stoic-mastery" rel="noopener" target="_blank">Super Mamas, episode 235 (2020)</a> and <a href="https://podcasts.apple.com/ie/podcast/victor-pierantoni-the-zen-stoic-on-the-similarities/id1531794099?i=1000620849756" rel="noopener" target="_blank">Acta Non Verba, episode 156 (2023)</a>. These conversations give background to his ideas.</p>
-  <a class="more" href="#" data-planned-page title="Page not designed yet">Read Victor's background</a>
+  <a class="qbtn on-light" href="#" data-planned-page title="Page not designed yet">Read Victor's background</a>
  </div>
 </div></section>
 
-<section class="emo"><div class="in">
+<section class="emo bg-sec"><span class="phl">Placeholder stock photo</span><div class="in">
  <div class="bar" aria-hidden="true"></div>
  <div>
   <h2 class="wide">Reflection and Emotional Awareness</h2>
   <p>Victor's emotional-awareness teaching includes noticing bodily sensations associated with a feeling. His reflective questions examine the situation and your interpretation of it. The Method page explains these parts of his work in plain language.</p>
-  <a class="more" href="#" data-planned-page title="Page not designed yet">Understand Victor's approach</a>
+  <a class="qbtn" href="#" data-planned-page title="Page not designed yet">Understand Victor's approach</a>
  </div>
 </div></section>
 
-<section class="begin"><div class="in">
+<section class="begin bg-sec"><span class="phl">Placeholder stock photo</span><div class="in">
  <h2 class="wide">A Conversation Is the Next Step</h2>
  <ol class="steps">
   <li><h3 class="wide">Apply</h3><p>Describe what you would like to work on.</p></li>
   <li><h3 class="wide">Meet Victor on Zoom</h3><p>The next step is a discovery call with Victor to explore fit. There is no obligation to proceed with coaching.</p></li>
   <li><h3 class="wide">Decide Whether to Work Together</h3><p>If you choose to begin coaching, sessions take place online and coaching members receive Circle access.</p></li>
  </ol>
- <a class="more" href="#" data-planned-page title="Page not designed yet">Explore 1:1 coaching</a>
+ <a class="qbtn" href="#" data-planned-page title="Page not designed yet">Explore 1:1 coaching</a>
 </div></section>
 
 <section class="answers" aria-label="Quick answers"><div class="in">
@@ -153,17 +178,24 @@ footer nav{gap:18px;flex-wrap:wrap}footer nav a{color:var(--body)}
   <div><h3>Is Circle Access Included?</h3><p>Yes. All coaching members receive Circle access.</p></div>
   <div><h3>What Happens After I Apply?</h3><p>The next step is a discovery Zoom call with Victor. There is no obligation to proceed with coaching.</p></div>
  </div>
- <a class="more" href="#" data-planned-page title="Page not designed yet">Read common questions</a>
+ <a class="qbtn" href="#" data-planned-page title="Page not designed yet">Read common questions</a>
 </div></section>
 
 <section class="final"><div class="in">
  <h2 class="wide">Bring the Situation You Want to Approach Differently</h2>
  <p>Explore <a href="#" data-planned-page title="Page not designed yet">Victor's background</a> and <a href="#" data-planned-page title="Page not designed yet">how he approaches coaching</a>, then describe what you would like to work on. Coaching is educational and does not replace medical, psychological, legal or financial advice.</p>
- <p style="margin-top:28px"><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a></p>
+ <p style="margin-top:26px"><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a></p>
  <p class="next">Your next step is a discovery Zoom call with Victor, with no obligation to proceed with coaching.</p>
 </div></section>
 </main>
 <footer><div class="in"><span>&copy; 2026 Liberation Coach Inc.</span>
 <nav aria-label="Footer"><a href="#" data-planned-page title="Page not designed yet">FAQ</a><a href="#" data-planned-page title="Page not designed yet">Contact</a><a href="#" data-planned-page title="Page not designed yet">Privacy Policy</a><a href="#" data-planned-page title="Page not designed yet">Terms of Service</a><a href="#" data-planned-page title="Page not designed yet">Coaching Disclaimer</a><a href="#" data-planned-page title="Page not designed yet">Accessibility</a></nav></div></footer>
 <div class="note">Option 3: Two Arenas. Design draft for review, homepage only. Victor photos are from the current site (placeholders); scene photos are free-license stock (Pexels). Menu and button links are not active yet.</div>
+<div class="mbar"><a class="btn" href="#" data-planned-page title="Page not designed yet">Apply for 1:1 Coaching</a></div>
+<script>
+(function(){var h=document.getElementById('top'),b=h.querySelector('.menu-btn');
+b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
+h.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){h.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus()}})})();
+</script>
 </body></html>
