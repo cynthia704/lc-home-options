@@ -31,7 +31,8 @@ iframe{border:0;background:#fff;height:100%;min-height:600px;width:100%;transiti
 <script>
 (function(){
  var s={d:'d1-cinematic',p:'index.html',v:'desktop'},f=document.getElementById('f'),st=document.getElementById('stage'),nt=document.getElementById('newtab');
- var q=new URLSearchParams(location.search);['d','p','v'].forEach(function(k){if(q.get(k))s[k]=q.get(k)});
+ var ok={d:['d1-cinematic','d2-arena','d3-dojo'],p:['index.html','coaching.html'],v:['desktop','tablet','mobile']};
+ var q=new URLSearchParams(location.search);['d','p','v'].forEach(function(k){var x=q.get(k);if(x&&ok[k].indexOf(x)>-1)s[k]=x});
  function render(){var u=s.d+'/'+s.p;if(f.getAttribute('src')!==u)f.setAttribute('src',u);nt.href=u;st.className='stage '+s.v;
   document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===s.d)});
   document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===s.p)});
