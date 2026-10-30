@@ -161,5 +161,17 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px 22px}footer nav a{color:#d2d5d8}
  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(16,18,20,.97);border-top:1px solid var(--rule-d);padding:10px 16px}
  .mbar .btn{display:flex;width:100%;clip-path:none}body{padding-bottom:78px}
 }
+/* Stock placeholders: faceless Unsplash photos, labeled, to be swapped for Victor's originals or scenes */
+.stk{position:absolute;z-index:3;top:14px;right:16px;font-size:11px;font-weight:700;line-height:1;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:6px 9px;border-radius:6px;pointer-events:none}
+.ph-fig{margin:0}.ph-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.ph-band{margin:0 0 34px}.ph-band img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover}
+.stk{border-radius:0}
+.door.f.ph{background:linear-gradient(180deg,rgba(16,18,20,.12) 0%,rgba(16,18,20,.55) 36%,rgba(16,18,20,.95) 62%),url(../assets/stock-founder-desk.jpg) center 35%/cover,var(--coal)}
+.door.a.ph{background:linear-gradient(180deg,rgba(16,18,20,.12) 0%,rgba(16,18,20,.55) 36%,rgba(16,18,20,.95) 62%),url(../assets/stock-athlete-track.jpg) center 30%/cover,var(--coal2)}
+.door.ph .big{color:rgba(255,255,255,.07)}.stone .ph-fig .cap,.stone .ph-band .cap{color:#5f6469}
+.emo.ph{background:linear-gradient(rgba(16,18,20,.55),rgba(16,18,20,.74)),url(../assets/stock-dock-mist.jpg) center 62%/cover}
+.emo.ph2{background:linear-gradient(rgba(16,18,20,.5),rgba(16,18,20,.72)),url(../assets/stock-sea-back.jpg) center 40%/cover}
+.wl h2{margin-bottom:28px}.ph-fig img{clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),calc(100% - 26px) 100%,0 100%)}
+@media (max-width:900px){.door.ph{min-height:520px}.ph-band img{aspect-ratio:16/9}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .hero .layer,.hero .fig{transform:none!important}.flip .in3d{transform:none!important}.flip .back{transform:none;position:relative}.flip .face{backface-visibility:visible}}

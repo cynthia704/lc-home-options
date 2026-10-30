@@ -173,6 +173,19 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px 22px}footer nav a{color:#d0d3d5}
  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(12,14,15,.96);border-top:1px solid var(--rule-d);padding:10px 16px}
  .mbar .btn{display:flex;width:100%}body{padding-bottom:78px}
 }
+/* Stock placeholders: faceless Unsplash photos, labeled, to be swapped for Victor's originals or scenes */
+.stk{position:absolute;z-index:3;top:14px;right:16px;font-size:11px;font-weight:700;line-height:1;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:6px 9px;border-radius:6px;pointer-events:none}
+.ph-fig{margin:0}.ph-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.ph-band{margin:0 0 34px}.ph-band img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover}
+.ph-fig img,.ph-band img{border-radius:22px}
+.route.ph{justify-content:flex-end;min-height:600px}.route.ph p{flex:0 0 auto}
+.route.f.ph{background:linear-gradient(180deg,rgba(12,14,15,.1) 0%,rgba(12,14,15,.55) 34%,rgba(12,14,15,.94) 58%),url(../assets/stock-founder-desk.jpg) center 35%/cover,var(--night2)}
+.route.a.ph{background:linear-gradient(180deg,rgba(8,40,37,.1) 0%,rgba(8,40,37,.55) 34%,rgba(8,40,37,.95) 58%),url(../assets/stock-athlete-track.jpg) center 30%/cover,#0f3f3b}
+.emo.ph{background:linear-gradient(rgba(12,14,15,.58),rgba(12,14,15,.72)),url(../assets/stock-dock-mist.jpg) center 62%/cover}
+.emo.ph2{background:linear-gradient(rgba(12,14,15,.5),rgba(12,14,15,.7)),url(../assets/stock-sea-back.jpg) center 40%/cover}
+.fly .after{align-items:center}.fly .after .ph-fig{grid-column:1;grid-row:1}.fly .after .cap{color:var(--mute-d)}
+.light .ph-fig .cap{color:#5f6367}.split .sl{position:sticky;top:110px}.split .sl h2{position:static;margin-bottom:28px}
+@media (max-width:900px){.route.ph{min-height:540px}.split .sl{position:static}.fly .after .ph-fig{grid-row:auto}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .hero h1 .hl path{stroke-dashoffset:0}.fly .pin{height:auto}.fly .sticky{position:relative;height:auto;padding-top:80px;padding-bottom:20px}
  .fly .space{height:auto;perspective:none}.qcard{position:relative;top:auto;margin:0 0 14px;opacity:1!important;transform:none!important}}

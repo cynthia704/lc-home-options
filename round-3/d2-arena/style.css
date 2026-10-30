@@ -164,6 +164,19 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px 22px}footer nav a{color:var(--in
  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(255,255,255,.96);border-top:1px solid var(--rule);padding:10px 16px}
  .mbar .btn{display:flex;width:100%}body{padding-bottom:78px}
 }
+/* Stock placeholders: faceless Unsplash photos, labeled, to be swapped for Victor's originals or scenes */
+.stk{position:absolute;z-index:3;top:14px;right:16px;font-size:11px;font-weight:700;line-height:1;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:6px 9px;border-radius:6px;pointer-events:none}
+.ph-fig{margin:0}.ph-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.ph-band{margin:0 0 34px}.ph-band img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover}
+.ph-fig img,.ph-band img{border-radius:26px}
+.panel.ph{justify-content:flex-end;min-height:600px}.panel.ph p{flex:0 0 auto}
+.panel.f.ph{background:linear-gradient(180deg,rgba(13,29,49,.1) 0%,rgba(13,29,49,.55) 34%,rgba(13,29,49,.95) 58%),url(../assets/stock-founder-desk.jpg) center 35%/cover,var(--navy)}
+.panel.a.ph{background:linear-gradient(180deg,rgba(8,63,58,.1) 0%,rgba(8,63,58,.55) 34%,rgba(8,55,51,.96) 58%),url(../assets/stock-athlete-track.jpg) center 30%/cover,#083f3a}
+.emo.ph{background:linear-gradient(rgba(13,29,49,.25),rgba(13,29,49,.45)),url(../assets/stock-dock-mist.jpg) center 60%/cover}
+.emo.ph2{background:linear-gradient(rgba(13,29,49,.25),rgba(13,29,49,.45)),url(../assets/stock-sea-back.jpg) center 40%/cover}
+.work .wl{position:sticky;top:110px}.work .wl h2{position:static;margin-bottom:28px}
+.ex2{display:grid;gap:20px}
+@media (max-width:900px){.panel.ph{min-height:540px}.work .wl{position:static}.ph-band img{aspect-ratio:16/9}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .ringsec .pin{height:auto}.ringsec .sticky{position:relative;height:auto;top:auto}.carousel{height:auto;perspective:none}
  .carousel ol{position:relative;left:auto;width:auto;margin:0;transform:none!important;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
