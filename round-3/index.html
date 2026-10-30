@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liberation Coach Website Concepts, Round 3</title>
+<style>
+:root{--bar:#111315;--amber:#fde7a6}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:#2a2d31;color:#eef0f2;font:500 14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:10px 16px;background:var(--bar)}
+.top b{font-size:15px;margin-right:6px}
+.grp{display:flex;gap:6px;flex-wrap:wrap}
+.grp button,.grp a{font:600 13px/1 system-ui,sans-serif;border:1px solid #3c4148;background:#1b1e21;color:#e6e8ea;border-radius:999px;padding:9px 14px;cursor:pointer;text-decoration:none}
+.grp button[aria-pressed="true"]{background:#e5ae2b;color:#15130d;border-color:#e5ae2b}
+.grp a:hover,.grp button:hover{border-color:#8a9097}
+.spacer{flex:1}
+.note{background:var(--amber);color:#3d2f00;padding:8px 16px;font-size:13px}
+.stage{flex:1;display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding:16px}
+iframe{border:0;background:#fff;height:100%;min-height:600px;width:100%;transition:width .3s;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.stage.tablet iframe{width:820px}.stage.mobile iframe{width:390px;border-radius:24px;border:10px solid #000}
+@media (max-width:700px){.top{gap:8px}.dev{display:none}}
+</style></head><body>
+<div class="top">
+ <b>Liberation Coach, Round 3</b>
+ <div class="grp" role="group" aria-label="Design"><button data-d="d1-cinematic" aria-pressed="true">Design 1: Cinematic</button><button data-d="d2-arena" aria-pressed="false">Design 2: Arena</button><button data-d="d3-dojo" aria-pressed="false">Design 3: Dojo</button></div>
+ <div class="grp" role="group" aria-label="Page"><button data-p="index.html" aria-pressed="true">Home</button><button data-p="coaching.html" aria-pressed="false">Coaching</button></div>
+ <span class="spacer"></span>
+ <div class="grp dev" role="group" aria-label="Screen size"><button data-v="desktop" aria-pressed="true">Desktop</button><button data-v="tablet" aria-pressed="false">Tablet</button><button data-v="mobile" aria-pressed="false">Mobile</button></div>
+ <div class="grp"><a id="newtab" href="d1-cinematic/index.html" target="_blank" rel="noopener">Open in new tab &#8599;</a></div>
+</div>
+<div class="note">Review build. Three directions, each with a working Home and Coaching page. Copy is from the handoff v2.4, unchanged. Victor's photos are small files from the current site until the originals arrive; no stock photos. Other menu pages and the Apply form come after a direction is picked. Scroll each page: the 3D and interactive parts respond to scrolling and the pointer.</div>
+<div class="stage" id="stage"><iframe id="f" title="Design preview" src="d1-cinematic/index.html"></iframe></div>
+<script>
+(function(){
+ var s={d:'d1-cinematic',p:'index.html',v:'desktop'},f=document.getElementById('f'),st=document.getElementById('stage'),nt=document.getElementById('newtab');
+ var q=new URLSearchParams(location.search);['d','p','v'].forEach(function(k){if(q.get(k))s[k]=q.get(k)});
+ function render(){var u=s.d+'/'+s.p;if(f.getAttribute('src')!==u)f.setAttribute('src',u);nt.href=u;st.className='stage '+s.v;
+  document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===s.d)});
+  document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===s.p)});
+  document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===s.v)});
+  history.replaceState(null,'','?d='+s.d+'&p='+s.p+'&v='+s.v)}
+ document.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){s.d=b.dataset.d;s.p='index.html';render()}});
+ document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){s.p=b.dataset.p;render()}});
+ document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){s.v=b.dataset.v;render()}});
+ f.addEventListener('load',function(){try{var p=f.contentWindow.location.pathname.split('/').pop()||'index.html';if(p==='index.html'||p==='coaching.html'){s.p=p;render()}}catch(e){}});
+ render();
+})();
+</script>
+</body></html>
