@@ -123,11 +123,13 @@
   if(LC.reduce||!big.matches){cards.forEach(function(c){c.style.transform='';c.style.opacity=''});return}
   var p=LC.pinProgress(pin);
   cards.forEach(function(c,i){
-   var d=(p-(0.16+i*0.34))/0.3, z=d*900, o=Math.max(0,Math.min(1,1-Math.abs(d)*1.1));
-   if(i===0&&d<0){o=1;z=Math.max(z,-200)}
-   if(i===cards.length-1&&d>0){o=1;z=Math.min(z,0)}
+   // arriving cards fly in from the depth; leaving cards rise and fade (they never grow over the heading)
+   var d=(p-(0.16+i*0.34))/0.3, z, y, o;
+   if(d<0){z=d*900;y=d*-40;o=Math.max(0,1+d*1.1)}else{z=-d*120;y=-d*140;o=Math.max(0,1-d*1.8)}
+   if(i===0&&d<0){o=1;z=Math.max(z,-200);y=0}
+   if(i===cards.length-1&&d>0){o=1;z=0;y=0}
    c.style.opacity=o.toFixed(3);
-   c.style.transform='translate3d(0,'+(d*-40).toFixed(1)+'px,'+z.toFixed(1)+'px) rotateX('+(d*-8).toFixed(2)+'deg)';
+   c.style.transform='translate3d(0,'+y.toFixed(1)+'px,'+z.toFixed(1)+'px) rotateX('+(d<0?d*-8:0).toFixed(2)+'deg)';
   });
  });
 })();
