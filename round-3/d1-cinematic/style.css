@@ -79,7 +79,7 @@ mask-image:linear-gradient(to right,transparent,#000 24%,#000 80%,transparent),l
 .route.a{background:radial-gradient(120% 90% at 0% 100%,rgba(229,174,43,.30),transparent 60%),#0f3f3b}
 .route .glyph{position:absolute;right:-30px;top:-40px;font:400 260px/1 "Instrument Serif",serif;color:rgba(255,255,255,.05);pointer-events:none}
 /* 3D question flythrough */
-.fly{background:var(--night);color:#cfd3d5;padding:0;overflow:hidden}
+.fly{background:var(--night);color:#cfd3d5;padding:0}
 .fly .pin{position:relative;height:320vh}
 .fly .sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:40px;padding:0 max(40px,calc((100vw - 1200px)/2 + 40px))}
 .fly .floor{position:absolute;inset:auto -50% -30% -50%;height:70%;background-image:linear-gradient(rgba(69,203,189,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(69,203,189,.18) 1px,transparent 1px);background-size:80px 80px;transform:perspective(600px) rotateX(70deg);transform-origin:50% 0;-webkit-mask-image:linear-gradient(transparent,#000 40%);mask-image:linear-gradient(transparent,#000 40%);pointer-events:none}
