@@ -53,25 +53,18 @@
  if(oa){gsap.from([oa,ob],{yPercent:12,opacity:0,duration:1.1,ease:'power3.out',stagger:.12});if(hv)gsap.from(hv,{yPercent:18,opacity:0,duration:1.1,ease:'power3.out',delay:.25});if(colon)gsap.from($$('i',colon),{scale:0,duration:.5,stagger:.12,ease:'back.out(2.6)',delay:.7});gsap.from($$('.h-band>*'),{y:26,opacity:0,duration:.8,stagger:.12,ease:'power3.out',delay:.35});
   if(fine&&hv)$('.h-stage').addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;gsap.to(oa,{x:x*-26,y:y*-14,duration:1,overwrite:'auto'});gsap.to(ob,{x:x*-26,y:y*-14,duration:1,overwrite:'auto'});gsap.to(hv,{x:x*18,duration:1,overwrite:'auto'})})}
 
- /* The 1s open into a full split screen: statement first, then founders and athletes */
+ /* One short move: the 1s open into the full split screen for founders and athletes */
  if(doc.classList.contains('pinny')){
-  var rect='polygon(0% 0%,50% 0%,100% 0%,100% 50%,100% 100%,0% 100%,0% 80%,0% 60%,0% 40%,0% 20%,0% 10%)',st=$('.stmt'),rts=$('.rts'),ra=$('.rt.a .tx'),rb=$('.rt.b .tx'),seam=$('.seam'),scr2=$$('.one .scrim');
-  var words=[],bp=$('.stmt .big');bp.textContent.split(/\s+/).forEach(function(w,i){if(!w)return;var s=document.createElement('span');s.textContent=w+' ';s.style.opacity=.22;words.push(s)});bp.textContent='';words.forEach(function(s){bp.appendChild(s)});
-  var tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.ones',start:'top top',end:'bottom bottom',scrub:.5,invalidateOnRefresh:true}});
-  tl.to(band,{autoAlpha:0,y:50,duration:.08},0).to(colon,{autoAlpha:0,duration:.05},0).to(hv,{yPercent:70,autoAlpha:0,duration:.16},0)
-    .to(oa,{left:0,top:0,width:'50vw',height:'100svh',clipPath:rect,duration:.2,ease:'power2.inOut'},.02)
-    .to(ob,{right:0,top:0,width:'50.2vw',height:'100svh',clipPath:rect,duration:.2,ease:'power2.inOut'},.02)
-    .to(scr2,{opacity:1,duration:.08},.17)
-    .fromTo(st,{autoAlpha:0,y:50},{autoAlpha:1,y:0,duration:.05},.22)
-    .to(words,{opacity:1,stagger:.26/words.length,duration:.02},.27)
-    .to(st,{autoAlpha:0,y:-50,duration:.05},.58)
-    .to(scr2,{opacity:0,duration:.07},.6)
-    .fromTo(seam,{scaleY:0},{scaleY:1,duration:.06},.62)
-    .set(rts,{visibility:'visible'},.63)
-    .fromTo(ra,{autoAlpha:0,x:-60},{autoAlpha:1,x:0,duration:.07},.64)
-    .fromTo(rb,{autoAlpha:0,x:60},{autoAlpha:1,x:0,duration:.07},.68)
-    .to({}, {duration:.25},.75);
-  var note=$('.h-note');if(note)tl.to(note,{autoAlpha:0,duration:.05},.05);
+  var rect='polygon(0% 0%,50% 0%,100% 0%,100% 50%,100% 100%,0% 100%,0% 80%,0% 60%,0% 40%,0% 20%,0% 10%)',rts=$('.rts'),ra=$('.rt.a .tx'),rb=$('.rt.b .tx'),seam=$('.seam');
+  var tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.ones',start:'top top',end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
+  tl.to(band,{autoAlpha:0,y:40,duration:.2},0).to(colon,{autoAlpha:0,duration:.12},0).to(hv,{yPercent:60,autoAlpha:0,duration:.35},0)
+    .to(oa,{left:0,top:0,width:'50vw',height:'100svh',clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
+    .to(ob,{right:0,top:0,width:'50.2vw',height:'100svh',clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
+    .fromTo(seam,{scaleY:0},{scaleY:1,duration:.15},.55)
+    .set(rts,{visibility:'visible'},.58)
+    .fromTo([ra,rb],{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.2},.6)
+    .to({}, {duration:.2},.8);
+  var note=$('.h-note');if(note)tl.to(note,{autoAlpha:0,duration:.1},.05);
  }
 
  /* Fog: blur falls away as the three questions arrive */

@@ -61,9 +61,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
 .rt .ph-label{position:absolute;right:12px;top:78px;z-index:2}
 
 
-.pinny .ones{height:440vh}
+.pinny .ones{height:190vh}
 .pinny .h-stage{position:sticky;top:0}
-.pinny .stmt{position:absolute;inset:0;z-index:6;background:transparent;color:#fff;display:flex;align-items:center;padding:0;visibility:hidden}
 .pinny .rts{position:absolute;inset:0;z-index:6;background:transparent;display:block;visibility:hidden}
 .pinny .rt{position:absolute;top:0;bottom:0;width:50%;min-height:0;background:transparent}.pinny .rt:after,.pinny .rt>video{display:none}.pinny .rt.a{left:0}.pinny .rt.b{left:50%}
 .pinny .rt .tx{z-index:2}.pinny .rt:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,9,10,.05),rgba(5,9,10,.3) 40%,rgba(5,9,10,.9) 74%)}
