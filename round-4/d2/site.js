@@ -26,9 +26,7 @@
   pv.addEventListener('click',function(){vids.forEach(function(v){if(v._late&&!paused){v.src=v._late;v._late=null;sync(v)}})});
  }
 
- /* Victor's real video on Meet: loads only when reached; poster stays if it cannot play */
- var scr=$('.m-screen');
- if(scr&&!paused){new IntersectionObserver(function(es,o){if(!es[0].isIntersecting)return;o.disconnect();var id=scr.getAttribute('data-yt');if(!/^[\w-]{11}$/.test(id))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+id+'&rel=0&playsinline=1&disablekb=1&iv_load_policy=3';f.title='Victor Pierantoni on video, muted';f.allow='autoplay; encrypted-media';f.tabIndex=-1;scr.insertBefore(f,scr.firstChild)},{rootMargin:'300px'}).observe(scr)}
+ /* Victor's own video plays only when someone asks for it */
  var lb=$('.lb');
  if(lb){var fr=$('.fr',lb),cl=$('button',lb),lastV;
   function closeLb(){lb.classList.remove('open');fr.textContent='';if(lastV)lastV.focus()}

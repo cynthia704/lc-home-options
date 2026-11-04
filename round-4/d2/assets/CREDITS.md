@@ -16,4 +16,4 @@ Stock videos: free from Pexels (pexels.com/license, checked November 4, 2026). N
 | journal.mp4 | 39425735 | Sergei Starostin |
 | sunrise.mp4 | 28647804 | Matthias Groeneveld |
 
-Victor's images: v-crossed-color.webp is from the live site; v-front-color.jpg is from his YouTube thumbnail for y6FLWSSMT7Q. The Meet Victor video is that same YouTube video, embedded. Replace with his originals when they arrive.
+Victor's images: v-crossed-color.webp is from the live site; v-front-color.jpg is from his YouTube thumbnail for y6FLWSSMT7Q. The Meet Victor button opens that same YouTube video when clicked. Replace with his originals when they arrive.
