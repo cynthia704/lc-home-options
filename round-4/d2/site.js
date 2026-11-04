@@ -18,12 +18,11 @@
  var vids=$$('video'),paused=reduce,pv=document.createElement('button');
  pv.className='pv';pv.type='button';
  function label(){pv.textContent=paused?'Play video':'Pause video';pv.setAttribute('aria-pressed',paused)}
- function sync(v){if(paused||!v._in){v.pause();return}var p=v.play();if(p&&p.catch)p.catch(function(){})}
+ function sync(v){if(paused||!v._in){v.pause();return}if(v._late){v.src=v._late;v._late=null}var p=v.play();if(p&&p.catch)p.catch(function(){})}
  if(vids.length){label();var hr=document.querySelector('.hd-r');if(hr)hr.insertBefore(pv,hr.firstChild);
   pv.addEventListener('click',function(){paused=!paused;label();vids.forEach(sync)});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target._in=e.isIntersecting;sync(e.target)})},{rootMargin:'200px'});
-  vids.forEach(function(v){v.muted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.loop=true;var s=v.getAttribute('data-src');if(s&&!paused){v.src=s}else if(s){v._late=s}io.observe(v)});
-  pv.addEventListener('click',function(){vids.forEach(function(v){if(v._late&&!paused){v.src=v._late;v._late=null;sync(v)}})});
+  vids.forEach(function(v){v.muted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.loop=true;v._late=v.getAttribute('data-src');io.observe(v)});
  }
 
  /* Victor's own video plays only when someone asks for it */
