@@ -5,6 +5,8 @@ Stock videos: free from Pexels (pexels.com/license, checked November 4, 2026). N
 | File | Pexels video | Creator |
 |---|---|---|
 | tower.mp4 | 38721048 | Jakub Zerdzicki |
+| pen.mp4 | 6143546 | cottonbro studio |
+| shoes.mp4 | 35829195 | Ludovic Delot |
 | hands.mp4 | 34771078 | Anh Nguyen |
 | runner.mp4 | 8533453 | KoolShooters |
 | office.mp4 | 35547294 | tokyo phoulike |

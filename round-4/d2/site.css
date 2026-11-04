@@ -51,8 +51,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
 
 /* Statement and routes. Default is a plain stack; JS adds .pinny on large screens */
 .stmt{background:var(--bone);color:var(--ink)}
-.stmt p.big{font:400 clamp(30px,3.7vw,58px)/1.16 "Gloock",serif;margin:0}
-.facts{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:18px;margin-top:44px}.facts li{border-top:3px solid currentColor;padding-top:12px;font-weight:500;font-size:18px;line-height:1.35}
+.stmt{padding:84px 0;overflow:clip}
+.st-g{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:clamp(36px,6vw,96px);align-items:center}
+.st-dots{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2vw,28px)}
+.st-c{position:relative;width:clamp(170px,17.5vw,270px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#111;box-shadow:0 0 0 3px var(--bone),0 0 0 6px var(--gold);will-change:transform}
+.st-c.a video{object-position:50% 62%}.st-c.b video{object-position:50% 66%}
+.st-dots .ph-label{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);white-space:nowrap}
+.stmt p.big{font:400 clamp(22px,2vw,31px)/1.3 "Gloock",serif;margin:0;max-width:31em;color:var(--ink)}
+.stmt mark{color:inherit;background:linear-gradient(var(--gold),var(--gold)) 0 100%/100% 24% no-repeat}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;max-width:48em}
+.chips li{display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:999px;padding:11px 20px;font-weight:500;font-size:17px;line-height:1.3}
+.chips li:before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.chips li.wide{background:transparent;color:var(--ink);border:1.5px solid var(--ink);border-radius:20px;flex-basis:100%}
 .rts{display:grid;grid-template-columns:1fr 1fr}
 .rt{position:relative;min-height:90vh;display:flex;align-items:flex-end;color:#f1f4f3;overflow:hidden}
 .rt .tx{position:relative;z-index:2;padding:clamp(24px,4vw,60px);max-width:640px}
@@ -175,7 +185,7 @@ footer .w{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-c
  .h-v{position:absolute;top:104px;bottom:auto;width:min(60vw,40svh);margin-left:calc(min(60vw,40svh)/-2)}
  .h-band{position:relative;padding:60px 20px 6px;grid-template-columns:1fr;gap:10px;background:linear-gradient(180deg,rgba(7,11,12,0),var(--ink) 34%)}
  .h-band h1{font-size:clamp(38px,10.6vw,62px)}.h-band .btn{display:none}.h-note{top:auto;bottom:calc(92px + env(safe-area-inset-bottom));right:6px;display:none}
- .facts{grid-template-columns:1fr;gap:12px;margin-top:28px}
+ .stmt{padding:60px 0}.st-g{grid-template-columns:minmax(0,1fr);gap:48px}.st-dots{flex-direction:row;justify-content:center}.st-c{width:clamp(120px,38vw,230px)}.st-dots .ph-label{bottom:-34px;font-size:11px}.stmt p.big{font-size:clamp(22px,5.8vw,30px)}.chips li{font-size:16px;border-radius:18px;padding:11px 16px}
  .rts{grid-template-columns:1fr}.rt{min-height:86svh}.rt .tx{padding:24px 20px 30px}.rt h3{font-size:clamp(40px,11vw,66px)}
  .focus .stick{min-height:0;padding:92px 0 40px}.f-in{grid-template-columns:minmax(0,1fr);gap:22px}.focus h2{font-size:clamp(40px,11vw,66px)}.qs li{font-size:clamp(28px,8vw,44px);padding:12px 0}
  .meet .in{grid-template-columns:minmax(0,1fr);gap:58px}.m-belt{right:-2%;width:34%;bottom:-14%}.m-play{left:8px;bottom:8px}.meet h2{font-size:clamp(40px,11vw,66px)}

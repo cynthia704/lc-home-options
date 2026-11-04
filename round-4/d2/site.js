@@ -66,6 +66,8 @@
   var note=$('.h-note');if(note)tl.to(note,{autoAlpha:0,duration:.1},.05);
  }
 
+ /* The colon's two dots drift apart slightly as this section passes */
+ var sc=$$('.st-c');if(sc.length&&big){gsap.fromTo(sc[0],{y:-7},{y:7,ease:'none',scrollTrigger:{trigger:'.stmt',start:'top bottom',end:'bottom top',scrub:true}});gsap.fromTo(sc[1],{y:7},{y:-7,ease:'none',scrollTrigger:{trigger:'.stmt',start:'top bottom',end:'bottom top',scrub:true}})}
  /* Fog: blur falls away as the three questions arrive */
  var fo=$('.focus');
  if(fo&&big){var fv=$('video',fo),qsl=$$('.qs li',fo);gsap.set(qsl,{opacity:.18});
