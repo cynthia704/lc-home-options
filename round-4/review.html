@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liberation Coach Website Concept, Round 4</title>
+<title>Liberation Coach Website Concepts, Round 4</title>
 <style>
 :root{--bar:#111315;--amber:#fde7a6}
 *{box-sizing:border-box}html,body{height:100%}
@@ -20,22 +20,25 @@ iframe{border:0;background:#000;height:100%;min-height:600px;width:100%;transiti
 </style></head><body>
 <div class="top">
  <b>Liberation Coach, Round 4</b>
+ <div class="grp" role="group" aria-label="Design"><button data-d="" aria-pressed="true">Design 1: Torn Paper</button><button data-d="d2/" aria-pressed="false">Design 2: Video</button></div>
  <div class="grp" role="group" aria-label="Page"><button data-p="index.html" aria-pressed="true">Home</button><button data-p="coaching.html" aria-pressed="false">Coaching</button></div>
  <span class="spacer"></span>
  <div class="grp dev" role="group" aria-label="Screen size"><button data-v="desktop" aria-pressed="true">Desktop</button><button data-v="tablet" aria-pressed="false">Tablet</button><button data-v="mobile" aria-pressed="false">Mobile</button></div>
  <div class="grp"><a id="newtab" href="index.html" target="_blank" rel="noopener">Open full screen &#8599;</a></div>
 </div>
-<div class="note">Review build. Copy is from the handoff v2.4, unchanged. Victor's photos come from his live site and his YouTube thumbnails until his originals arrive. Faceless stock photos are labeled placeholders. Other menu pages and the Apply form come next. Best seen full screen: scroll slowly, and move the pointer over the headline, the Founders and Athletes photos, and the water.</div>
+<div class="note">Review build. Copy is from the handoff v2.4, unchanged. Victor's photos and video come from his live site and YouTube until his originals arrive. Faceless stock photos and videos are labeled placeholders. Other menu pages and the Apply form come next. Best seen full screen: scroll slowly and move the pointer around.</div>
 <div class="stage" id="stage"><iframe id="f" title="Design preview" src="index.html"></iframe></div>
 <script>
 (function(){
- var s={p:'index.html',v:'desktop'},f=document.getElementById('f'),st=document.getElementById('stage'),nt=document.getElementById('newtab');
- var ok={p:['index.html','coaching.html'],v:['desktop','tablet','mobile']};
- var q=new URLSearchParams(location.search);['p','v'].forEach(function(k){var x=q.get(k);if(x&&ok[k].indexOf(x)>-1)s[k]=x});
- function render(){if(f.getAttribute('src')!==s.p)f.setAttribute('src',s.p);nt.href=s.p;st.className='stage '+s.v;
+ var s={d:'',p:'index.html',v:'desktop'},f=document.getElementById('f'),st=document.getElementById('stage'),nt=document.getElementById('newtab');
+ var ok={d:['','d2/'],p:['index.html','coaching.html'],v:['desktop','tablet','mobile']};
+ var q=new URLSearchParams(location.search);['d','p','v'].forEach(function(k){var x=q.get(k);if(x&&ok[k].indexOf(x)>-1)s[k]=x});
+ function render(){var u=s.d+s.p;if(f.getAttribute('src')!==u)f.setAttribute('src',u);nt.href=u;st.className='stage '+s.v;
+  document.querySelectorAll('[data-d]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===s.d)});
   document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===s.p)});
   document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===s.v)});
-  history.replaceState(null,'','?p='+s.p+'&v='+s.v)}
+  history.replaceState(null,'','?d='+encodeURIComponent(s.d)+'&p='+s.p+'&v='+s.v)}
+ document.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){s.d=b.dataset.d;s.p='index.html';render()}});
  document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){s.p=b.dataset.p;render()}});
  document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){s.v=b.dataset.v;render()}});
  f.addEventListener('load',function(){try{var p=f.contentWindow.location.pathname.split('/').pop()||'index.html';if(ok.p.indexOf(p)>-1&&p!==s.p){s.p=p;render()}}catch(e){}});
