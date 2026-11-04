@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liberation Coach Website Concept, Round 4</title>
+<style>
+:root{--bar:#111315;--amber:#fde7a6}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:#2a2d31;color:#eef0f2;font:500 14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:10px 16px;background:var(--bar)}
+.top b{font-size:15px;margin-right:6px}
+.grp{display:flex;gap:6px;flex-wrap:wrap}
+.grp button,.grp a{font:600 13px/1 system-ui,sans-serif;border:1px solid #3c4148;background:#1b1e21;color:#e6e8ea;border-radius:999px;padding:9px 14px;cursor:pointer;text-decoration:none}
+.grp button[aria-pressed="true"]{background:#f2b21b;color:#15130d;border-color:#f2b21b}
+.grp a:hover,.grp button:hover{border-color:#8a9097}
+.spacer{flex:1}
+.note{background:var(--amber);color:#3d2f00;padding:8px 16px;font-size:13px}
+.stage{flex:1;display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding:16px}
+iframe{border:0;background:#000;height:100%;min-height:600px;width:100%;transition:width .3s;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.stage.tablet iframe{width:820px}.stage.mobile iframe{width:390px;border-radius:24px;border:10px solid #000}
+@media (max-width:700px){.top{gap:8px}.dev{display:none}}
+</style></head><body>
+<div class="top">
+ <b>Liberation Coach, Round 4</b>
+ <div class="grp" role="group" aria-label="Page"><button data-p="index.html" aria-pressed="true">Home</button><button data-p="coaching.html" aria-pressed="false">Coaching</button></div>
+ <span class="spacer"></span>
+ <div class="grp dev" role="group" aria-label="Screen size"><button data-v="desktop" aria-pressed="true">Desktop</button><button data-v="tablet" aria-pressed="false">Tablet</button><button data-v="mobile" aria-pressed="false">Mobile</button></div>
+ <div class="grp"><a id="newtab" href="index.html" target="_blank" rel="noopener">Open full screen &#8599;</a></div>
+</div>
+<div class="note">Review build. Copy is from the handoff v2.4, unchanged. Victor's photos come from his live site and his YouTube thumbnails until his originals arrive. Faceless stock photos are labeled placeholders. Other menu pages and the Apply form come next. Best seen full screen: scroll slowly, and move the pointer over the headline, the Founders and Athletes photos, and the water.</div>
+<div class="stage" id="stage"><iframe id="f" title="Design preview" src="index.html"></iframe></div>
+<script>
+(function(){
+ var s={p:'index.html',v:'desktop'},f=document.getElementById('f'),st=document.getElementById('stage'),nt=document.getElementById('newtab');
+ var ok={p:['index.html','coaching.html'],v:['desktop','tablet','mobile']};
+ var q=new URLSearchParams(location.search);['p','v'].forEach(function(k){var x=q.get(k);if(x&&ok[k].indexOf(x)>-1)s[k]=x});
+ function render(){if(f.getAttribute('src')!==s.p)f.setAttribute('src',s.p);nt.href=s.p;st.className='stage '+s.v;
+  document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===s.p)});
+  document.querySelectorAll('[data-v]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===s.v)});
+  history.replaceState(null,'','?p='+s.p+'&v='+s.v)}
+ document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){s.p=b.dataset.p;render()}});
+ document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){s.v=b.dataset.v;render()}});
+ f.addEventListener('load',function(){try{var p=f.contentWindow.location.pathname.split('/').pop()||'index.html';if(ok.p.indexOf(p)>-1&&p!==s.p){s.p=p;render()}}catch(e){}});
+ render();
+})();
+</script>
+</body></html>
