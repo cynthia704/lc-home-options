@@ -105,7 +105,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #1b73e8;outline-offset:3p
 .final .next{font-size:18px;margin:14px 0 0}.final .btn{width:100%}
 .f-pic{display:flex;justify-content:center;align-items:flex-end;background:var(--gold);padding-top:22px;overflow:hidden}.f-pic img{width:min(76%,420px)}
 footer{background:var(--ink);color:#c6cbca;padding:30px 0;font:400 16px/1.4 "Bricolage Grotesque",sans-serif}
-footer .w{display:flex;flex-direction:column;gap:14px}footer img{height:18px;width:auto}footer nav{display:flex;flex-wrap:wrap;gap:2px 20px}footer a{color:#e6eae9;display:inline-flex;align-items:center;min-height:44px}
+footer .w{display:flex;flex-direction:column;gap:14px}footer img{height:18px;width:auto;align-self:flex-start}footer nav{display:flex;flex-wrap:wrap;gap:2px 20px}footer a{color:#e6eae9;display:inline-flex;align-items:center;min-height:44px}
 
 /* Coaching extras */
 .spec h2{font-size:clamp(38px,10.6vw,72px);margin-bottom:26px}
