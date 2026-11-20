@@ -54,18 +54,20 @@
  /* Hero entrance: the numerals rise, Victor steps in. The offer is never hidden while it waits */
  var oa=$('.one.a'),ob=$('.one.b'),hv=$('.h-v'),band=$('.h-band'),colon=$('.colon');
  if(oa){gsap.from([oa,ob],{yPercent:12,opacity:0,duration:1.1,ease:'power3.out',stagger:.12});if(hv)gsap.from(hv,{yPercent:18,opacity:0,duration:1.1,ease:'power3.out',delay:.25});if(colon)gsap.from($$('i',colon),{scale:0,duration:.5,stagger:.12,ease:'back.out(2.6)',delay:.7});gsap.from($$('.h-band>*'),{y:26,opacity:0,duration:.8,stagger:.12,ease:'power3.out',delay:.35});
-  if(fine&&hv&&wide)$('.h-stage').addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;gsap.to(oa,{x:x*-20,y:y*-10,duration:1,overwrite:'auto'});gsap.to(ob,{x:x*-20,y:y*-10,duration:1,overwrite:'auto'});gsap.to(hv,{x:x*14,duration:1,overwrite:'auto'})})}
+  if(fine&&hv&&wide)$('.h-stage').addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;gsap.to(hv,{x:x*14,duration:1,overwrite:'auto'})})}
 
  /* One short move: the 1s open into two cards for founders and athletes. The cards are shorter than the screen */
  if(doc.classList.contains('pinny')){
   var rect='polygon(0% 0%,50% 0%,100% 0%,100% 50%,100% 100%,0% 100%,0% 80%,0% 60%,0% 40%,0% 20%,0% 10%)',rts=$('.rts'),ra=$('.rt.a .tx'),rb=$('.rt.b .tx'),seam=$('.seam');
+  var stage=$('.h-stage');
   function cardH(){return Math.min(innerHeight*.76,740)}
   function cardTop(){return 66+(innerHeight-66-cardH())/2}
   function cardW(){return (doc.clientWidth-48)/2}
+  function spot(el){var r=el.getBoundingClientRect(),s=stage.getBoundingClientRect(),x=+gsap.getProperty(el,'x')||0,y=+gsap.getProperty(el,'y')||0;return {l:r.left-s.left-x,r:r.right-s.left-x,t:r.top-s.top-y}}
   var tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.ones',start:'top top',end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
   tl.to(band,{autoAlpha:0,y:40,duration:.2},0).to(colon,{autoAlpha:0,duration:.12},0).to(hv,{yPercent:60,autoAlpha:0,duration:.35},0)
-    .to(oa,{left:16,top:function(){return cardTop()},width:function(){return cardW()},height:function(){return cardH()},clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
-    .to(ob,{right:16,top:function(){return cardTop()},width:function(){return cardW()},height:function(){return cardH()},clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
+    .to(oa,{x:function(){return 16-spot(oa).l},y:function(){return cardTop()-spot(oa).t},width:function(){return cardW()},height:function(){return cardH()},clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
+    .to(ob,{x:function(){return (doc.clientWidth-16)-spot(ob).r},y:function(){return cardTop()-spot(ob).t},width:function(){return cardW()},height:function(){return cardH()},clipPath:rect,duration:.6,ease:'power2.inOut'},.02)
     .fromTo(seam,{scaleY:0},{scaleY:1,duration:.15},.55)
     .set(rts,{visibility:'visible'},.58)
     .fromTo([ra,rb],{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.2},.6)
@@ -79,7 +81,7 @@
  /* Reflection: the window breathes on its own and opens a little with the scroll */
  var br=$('.b-win');
  if(br){var open={v:0};ScrollTrigger.create({trigger:'.breath',start:'top 90%',end:'top 10%',scrub:true,onUpdate:function(s){open.v=s.progress}});
-  gsap.ticker.add(function(t){var base=Math.min(br.offsetHeight*.4,innerWidth*.3),b=(Math.sin(t*.78)+1)/2,r=base*(.8+b*.14)+open.v*base*.3;br.style.setProperty('--r',r.toFixed(0)+'px')})}
+  gsap.ticker.add(function(t){var base=Math.min(br.offsetHeight*.95,innerWidth*.3),b=(Math.sin(t*.78)+1)/2,r=base*(.8+b*.14)+open.v*base*.3;br.style.setProperty('--r',r.toFixed(0)+'px')})}
 
  /* Steps: scroll opens each panel in turn on large screens */
  if(pns.length&&big)ScrollTrigger.create({trigger:'.panels',start:'top 75%',end:'bottom 45%',scrub:true,onUpdate:function(s){setPn(Math.min(pns.length-1,Math.floor(s.progress*pns.length)))}});
